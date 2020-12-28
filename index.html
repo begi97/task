@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino Template</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+        :root {
+            --main-btn:  #d3ff06;
+            --main-txt: #1c163e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            padding: 20px;
+        } 
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ededf3;
+        }
+
+        .banner {
+            width: 100%;
+            background-image: url("https://static.nightrush.com/static/img/slider/v1/third-welcome/608-57750-en.png?v=1");
+            height: 250px;
+            background-position: right;
+            position: relative;
+        }
+
+        .banner-content {
+            padding: 20px;
+            background: rgba(28, 22, 62,.8);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .banner-content .logo {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .banner-content .logo img {
+            width: 100px;
+        }
+
+        
+        .banner-content .btn {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 14px;
+            background: var(--main-btn);
+            color: var(--main-txt);
+            width: 320px;
+            padding: 15px 30px;
+            border-radius: 32px;
+            text-align: center;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        
+        .body .info {
+            text-align: center;
+            color: var(--main-txt);
+            margin: 30px 0;
+
+        }
+
+        .body .info h1 {
+            margin-bottom: 20px;
+            font-size: 42px;
+        }
+
+        .body .info h4 {
+            font-size: 22px;
+            padding: 0 10px;
+        }
+
+        .body .info h4 span {
+            text-transform: uppercase;
+        }
+
+        .body .guidance {
+            background:  #1c163e;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .body .guidance .title {
+            color: #fff;
+            position: relative;
+        }
+
+        .body .guidance .title span {
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        .body .guidance .title::after{
+            content: "";
+            position: absolute;
+            background: var(--main-btn);
+            height: 5px;
+            width: 100px;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .body .guidance .guidance-flex {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 50px 0 30px 0;
+        }
+
+        .body .guidance .step {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #e7e7f1;
+            border: 5px solid #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .body .guidance .step i {
+            font-size: 28px;
+            color: var(--main-txt);
+            margin-bottom: 10px;
+        }
+
+        .body .guidance .step a {
+            font-size: 12px;
+            padding: 0 5px;
+            text-decoration: underline;
+            color: #110c2d;
+            line-height: 18px;
+        }
+
+        .body .call-to-action {
+            background: #110c2d;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .body .call-to-action .btn {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 14px;
+            background: var(--main-btn);
+            color: var(--main-txt);
+            width: 320px;
+            padding: 15px 30px;
+            border-radius: 32px;
+            text-align: center;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        .body .terms-and-conditions {
+            padding: 20px;
+        }
+
+        .body .terms-and-conditions h4 {
+            color: var(--main-txt);
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .body .terms-and-conditions ul {
+            list-style: initial;
+        }
+
+        .body .terms-and-conditions ul li {
+            margin-left: 10px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .footer {
+            background: #200037;
+            padding: 20px;
+        }
+
+        .footer .footer-flex {
+            display: flex;
+        }
+
+        .footer .footer-flex  .img-section {
+            margin-right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .footer .footer-flex  .img-section img {
+            width: 100px;
+            margin: 10px 0;
+        }
+
+        .footer .footer-flex  .img-section img:first-child {
+            width: 16px;
+        }
+
+        .footer .footer-flex p {
+            color: #9fa5af;
+            font-size: 14px;
+
+        }
+
+        .footer .footer-flex p a {
+            color: #9fa5af;
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 540px){
+            body {
+                padding: 0;
+            }
+
+            .banner {
+                height: 200px;
+            }
+
+            .banner-content .btn {
+                width: 250px;
+                font-size: 16px;
+            }
+
+            .body .info h1 {
+                font-size: 24px;
+            }
+
+            .body .info h4 {
+                font-size: 16px;
+            }
+
+            .body .guidance .title {
+                font-size: 16px;
+            }
+
+            .body .guidance .guidance-flex {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .body .guidance .step {
+                margin-bottom: 20px;
+                width: 280px;
+                height: 280px;
+            }
+
+            .body .guidance .step i {
+                font-size: 42px;
+            }
+
+            .body .guidance .step a {
+                line-height: 24px;
+                font-size: 18px;
+            }
+
+            .body .call-to-action .btn {
+                width: 250px;
+            }
+
+            .footer .footer-flex {
+                flex-direction: column;
+            }
+        }
+
+
+
+       
+
+
+    </style>
+</head>
+<body>
+
+    <!-- wrapper starts -->
+    <div class="wrapper">
+        <!-- banner starts -->
+        <header class="banner">
+            <div class="banner-content">
+                <div class="logo">
+                    <img src="https://www.nightrush.com/assets/svg/logo.svg" alt="NightRush">
+                </div>
+                <a href="#" target="_blank" class="btn">Claim your free spins now!</a>
+            </div>
+        </header>
+        <!-- banner ends -->
+
+        <!-- body starts -->
+        <section class="body">
+            <div class="info">
+                <h1>Hello Bahruz,</h1>
+                <h4>Your account has been credited with <span>free spins!</span></h4>
+            </div>
+            <div class="guidance">
+                <h1 class="title">How to claim your <span>free Spins?</span></h1>
+                <div class="guidance-flex">
+                    <div class="step">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <a href="#">Login to your account</a>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-check-circle"></i>
+                        <a href="#">Activate your Free Spin Bonus</a>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-question-circle"></i>
+                        <a href="#">Have a question? Contact Customer Support!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="call-to-action">
+                <a href="#" class="btn">Play Now</a>
+            </div>
+            <div class="terms-and-conditions">
+                <h4>Terms and Conditions</h4>
+                <ul>
+                    <li>To wager the bonus, you need to make bets for an amount 40 times the bonus amount.</li>
+                    <li>General bonus terms and conditions apply</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- body ends -->
+
+        <!-- footer starts -->
+        <footer class="footer">
+            <div class="footer-flex">
+                <div class="img-section">
+                    <img src="https://www.nightrush.com/assets/svg/security-logos/18.svg" alt="18+">
+                    <img src="https://www.nightrush.com/assets/svg/logo.svg" alt="NightRush">
+                </div>
+                <div class="copyright">
+                    <p><a href="nightrush.com" target="_blank">nightrush.com</a> is operated by N1 Interactive Ltd, a company incorporated under the laws of Malta with
+                    registration number C 81457 and registered address at 206, Wisely House, Old Bakery Street, Valletta VLT1451, Malta.
+                    nightrush.com is licensed and regulated by the Malta Gaming Authority under the licences: MGA/B2C/394/2017 (issued on
+                    01/08/2018).</p>
+                </div>
+            </div>
+        </footer>
+        <!-- footer ends -->
+    </div>
+    <!-- wrapper ends -->
+    
+</body>
+</html>
